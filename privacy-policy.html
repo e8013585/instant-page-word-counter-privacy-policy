@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Instant Page Word Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2d3748;
+            --accent-color: #4a7c59;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #4a5568;
+            --heading-color: #1a202c;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a202c 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .last-updated {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem 4rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #3d6b4a 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .highlight-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box p {
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--heading-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background-color: #edf2f7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #edf2f7;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge.green {
+            background-color: #c6f6d5;
+            color: #276749;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: #f7fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .project-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1rem;
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #f7fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: #90cdf4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .foss-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instant Page Word Counter - Privacy Policy</h1>
+        <div class="last-updated">Last updated: <span id="date"></span></div>
+    </header>
+
+    <main>
+        <div class="highlight-box">
+            <h2>Privacy-focused</h2>
+            <p>As a FOSS developer, I believe your data belongs to you — not to me, not to advertisers, not to anyone else. This extension is designed with privacy as a core principle.</p>
+        </div>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">📊</span>
+                Data Collection
+            </h2>
+            <p><strong>In short:</strong> I don't collect your data.</p>
+            <p>This browser extension is designed to work entirely on your device. I do not:</p>
+            <ul>
+                <li>Collect personal information</li>
+                <li>Track your usage or behavior</li>
+                <li>Use analytics or telemetry</li>
+                <li>Store data on external servers</li>
+                <li>Share any information with third parties</li>
+            </ul>
+            <p>
+                <span class="badge green">✓ No Tracking</span>
+                <span class="badge green">✓ No Analytics</span>
+                <span class="badge green">✓ No Ads</span>
+                <span class="badge green">✓ No Telemetry</span>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">💾</span>
+                Local Data Storage
+            </h2>
+            <p>Any data you create or input into the extension stays on your device. This includes:</p>
+            <ul>
+                <li>Configuration files and preferences</li>
+                <li>User-generated content</li>
+                <li>Application settings</li>
+                <li>Cache and temporary files</li>
+            </ul>
+            <p>You have full control over this data. You can view, modify, export, or delete it at any time. Check each project's documentation for specific file locations.</p>
+            <p>Some of my projects, especially regarding Chrome extensions, may include content script injection. The extension injects its content script only when needed to analyze visible page text. No data is being collected or sent.</p>
+            <p>
+This extension uses Chrome permissions such as <code>activeTab</code>, 
+<code>scripting</code>, <code>storage</code>, and <code>tabs</code> 
+solely to enable on-demand text analysis and to store user preferences locally.
+These permissions are not used to collect or transmit data.
+</p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">🔍</span>
+                Open Source Transparency
+            </h2>
+            <p>This extension is released under open source licenses. This means:</p>
+            <ul>
+                <li><strong>Verifiable claims:</strong> You can inspect the source code to verify these privacy claims</li>
+                <li><strong>Community oversight:</strong> Other developers can audit the code for privacy issues</li>
+                <li><strong>No hidden functionality:</strong> What you see in the code is what you get</li>
+            </ul>
+            <p>
+                <span class="badge">MIT</span>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">🔗</span>
+                Third-Party Services
+            </h2>
+            <p>This extension does not integrate with third-party analytics, advertising, or tracking services.</p>
+            <p>If an application requires integration with external services (APIs, cloud storage, etc.) for its core functionality:</p>
+            <ul>
+                <li>This will be clearly documented</li>
+                <li>You should review that service's privacy policy separately</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">📁</span>
+                Projects Covered
+            </h2>
+            <p>This privacy policy applies to the Instant Page Word Counter extension.</p>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">🔄</span>
+                Policy Updates
+            </h2>
+            <p>If this privacy policy is updated, changes will be:</p>
+            <ul>
+                <li>Posted on this page with a new "Last Updated" date</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>
+                <span class="section-icon">✉️</span>
+                Contact
+            </h2>
+            <p>If you have questions, concerns, or suggestions about this privacy policy or my software's data practices, please reach out:</p>
+            <div class="contact-links">
+                <a href="mailto:e8013585@gmail.com" class="contact-link">
+                    📧 e8013585@gmail.com
+                </a>
+                <a href="https://github.com/e8013585" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Levent B. All software released under open source licenses.</p>
+        <p>This privacy policy itself is available under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a> — feel free to adapt it for your own projects.</p>
+        <div class="foss-banner">
+            <span>Free and Open Source Software</span>
+        </div>
+    </footer>
+
+    <script>
+        // Set current date for "Last Updated"
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+        
+        // Set current year for copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
